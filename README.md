@@ -8,4 +8,4 @@ All loaded interfaces that are connected will be disabled and then re-enabled af
 
 ## Requirements:
 * Windows 7+ with .Net 4.5+
-* NetSh.exe (located in `C:\Windows\System32.exe`)
+* NetSh.exe (located in `C:\Windows\System32\`)
