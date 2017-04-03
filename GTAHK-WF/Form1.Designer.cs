@@ -35,6 +35,9 @@
             this.ReconnectTimer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.althk = new System.Windows.Forms.Button();
+            this.CreateSoloWorker = new System.ComponentModel.BackgroundWorker();
+            this.PSDCWorker = new System.ComponentModel.BackgroundWorker();
+            this.sololbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ReloadInterfaces
@@ -62,9 +65,9 @@
             this.hklbl.AutoSize = true;
             this.hklbl.Location = new System.Drawing.Point(12, 161);
             this.hklbl.Name = "hklbl";
-            this.hklbl.Size = new System.Drawing.Size(166, 13);
+            this.hklbl.Size = new System.Drawing.Size(249, 13);
             this.hklbl.TabIndex = 3;
-            this.hklbl.Text = "Current HotKey: CTRL+NumPad1";
+            this.hklbl.Text = "Current HotKey (10s Disconnect): CTRL+NumPad1";
             // 
             // ReconnectTimer
             // 
@@ -91,11 +94,31 @@
             this.althk.UseVisualStyleBackColor = true;
             this.althk.Click += new System.EventHandler(this.althk_Click);
             // 
+            // CreateSoloWorker
+            // 
+            this.CreateSoloWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.CreateSoloWorker_DoWork);
+            this.CreateSoloWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.InterfacesReconnected);
+            // 
+            // PSDCWorker
+            // 
+            this.PSDCWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.PSDCWorker_DoWork);
+            this.PSDCWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.InterfacesReconnected);
+            // 
+            // sololbl
+            // 
+            this.sololbl.AutoSize = true;
+            this.sololbl.Location = new System.Drawing.Point(12, 174);
+            this.sololbl.Name = "sololbl";
+            this.sololbl.Size = new System.Drawing.Size(260, 13);
+            this.sololbl.TabIndex = 5;
+            this.sololbl.Text = "Current HotKey (Solo Public Lobby): CTRL+NumPad1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 261);
+            this.Controls.Add(this.sololbl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.hklbl);
             this.Controls.Add(this.nconsole);
@@ -121,6 +144,9 @@
         private System.Windows.Forms.Timer ReconnectTimer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button althk;
+        private System.ComponentModel.BackgroundWorker CreateSoloWorker;
+        private System.ComponentModel.BackgroundWorker PSDCWorker;
+        private System.Windows.Forms.Label sololbl;
     }
 }
 
