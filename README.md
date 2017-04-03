@@ -4,7 +4,9 @@ All loaded interfaces that are connected will be disabled and then re-enabled af
 
 ## Usage:
 * Launch the program with Administrative rights (required)
-* Hit the buttons `CTRL+NumPad1` by default or `CTRL+RightArrow` for those without a numpad. These are global hotkeys and can be used from within GTAV or any other program.
+* 10 second Pacific Standard Disconnect: `CTRL+NumPad1` by default or `CTRL+LeftArrow` for those without a numpad.
+* Solo Public Lobby Creator. Must be joined into a regular lobby. `CTRL+Numpad3` by default or `CTRL+RightArrow` for those without a numpad.
+(Note: These are global hotkeys and can be used from within GTAV or any other program)
 
 ## Requirements:
 * Windows 7+ with .Net 4.5+
